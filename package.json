@@ -3,9 +3,9 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vinxi dev",
-    "build": "vinxi build",
-    "start": "vinxi start",
+    "dev": "vite",
+    "build": "vite build",
+    "start": "vite preview",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "format": "prettier --write ."
@@ -47,7 +47,6 @@
     "prettier": "^3.0.0",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.0.0",
-    "vinxi": "^0.5.11",
     "vite": "^6.0.0",
     "vite-tsconfig-paths": "^5.0.0"
   }
