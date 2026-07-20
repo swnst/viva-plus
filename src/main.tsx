@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { RouterProvider, createRouter } from '@tanstack/react-router';
-import { routeTree } from './routeTree.gen';
+import { RouterProvider } from '@tanstack/react-router';
+import { createRouter } from './router';
 import './style.css';
 
-const router = createRouter({ routeTree });
+const router = createRouter();
 
 const rootElement = document.getElementById('root')!;
 if (!rootElement.innerHTML) {

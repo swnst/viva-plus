@@ -5,17 +5,11 @@ import {
     createRootRouteWithContext,
     useRouter,
     useRouterState,
-    useRouter,
-    useRouterState,
 } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
-import type { ReactNode } from "react";
 
-import appCss from "../style.css?url";
 import { Preloader } from "@/components/Preloader";
 import { CustomCursor } from "@/components/CustomCursor";
-
-import faviconUrl from "@/assets/my-icon.svg";
 
 function NotFoundComponent() {
     return (
