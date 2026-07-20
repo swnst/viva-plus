@@ -19,6 +19,7 @@ export function CustomCursor() {
         if (!window.matchMedia("(any-hover: hover)").matches) return;
         
         setIsVisible(true);
+        document.body.classList.add("hide-cursor");
 
         const moveCursor = (e: MouseEvent) => {
             cursorX.set(e.clientX - 16);
@@ -41,6 +42,7 @@ export function CustomCursor() {
         return () => {
             window.removeEventListener("mousemove", moveCursor);
             window.removeEventListener("mouseover", handleMouseOver);
+            document.body.classList.remove("hide-cursor");
         };
     }, [cursorX, cursorY]);
 

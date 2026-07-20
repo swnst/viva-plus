@@ -28,9 +28,9 @@ export const Route = createFileRoute("/")({
 export function Footer() {
     return (
         <footer className="border-t border-border/40 bg-background">
-            <div className="mx-auto max-w-7xl px-4 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+            <div className="mx-auto max-w-7xl px-4 md:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-ibm text-muted-foreground">
 
-                <div className="font-display text-xl text-foreground">
+                <div className="font-old-display text-xl text-foreground">
                     ViVa<span className="text-accent">+</span>
                 </div>
 

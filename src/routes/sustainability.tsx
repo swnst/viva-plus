@@ -87,7 +87,7 @@ function Sustainability() {
                         <div className="flex flex-wrap items-end justify-between gap-6">
                             <div>
                                 <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground">02 · Locations</div>
-                                <h2 className="mt-3 font-display text-4xl md:text-6xl">ตู้คืนขวด<span className="italic text-gradient-gold"> ใกล้คุณ</span></h2>
+                                <h2 className="mt-8 font-display text-4xl md:text-6xl">ตู้คืนขวด<span className="italic text-gradient-gold"> ใกล้คุณ</span></h2>
                             </div>
                             <p className="max-w-sm text-sm text-muted-foreground">
                                 ขนาดของจุดสีทองแสดงถึงปริมาณขวดที่คืนในเดือนนี้ — คลิกเพื่อดูรายละเอียด

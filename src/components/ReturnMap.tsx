@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import "leaflet/dist/leaflet.css";
 
 const stations = [
     { id: 1, name: "ตู้คืนขวด สยามพารากอน", area: "ปทุมวัน", lat: 13.7462, lng: 100.5348, count: 2431 },
@@ -18,8 +19,7 @@ export function ReturnMap() {
     useEffect(() => {
         setIsMounted(true);
         Promise.all([
-            import("react-leaflet"),
-            import("leaflet/dist/leaflet.css")
+            import("react-leaflet")
         ]).then(([RL]) => {
             setLeafletComps(RL);
         });

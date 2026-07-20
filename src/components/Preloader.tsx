@@ -10,12 +10,34 @@ export function Preloader() {
         // Prevent scrolling while preloader is active
         document.body.style.overflow = "hidden";
 
+        let minTimePassed = false;
+        let isLoaded = document.readyState === "complete";
+        
+        const finishLoading = () => {
+            if (minTimePassed && isLoaded) {
+                setIsLoading(false);
+            }
+        };
+
         const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 800); // Quick 0.8s preloader to sync with page animations
+            minTimePassed = true;
+            finishLoading();
+        }, 500); // Minimum display time to prevent flashing
+
+        const handleLoad = () => {
+            isLoaded = true;
+            finishLoading();
+        };
+
+        if (!isLoaded) {
+            window.addEventListener("load", handleLoad);
+        } else {
+            finishLoading();
+        }
 
         return () => {
             clearTimeout(timer);
+            window.removeEventListener("load", handleLoad);
             document.body.style.overflow = "auto";
         };
     }, []);
