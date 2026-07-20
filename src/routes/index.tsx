@@ -53,7 +53,7 @@ function Home() {
     return (
         <div className="min-h-screen bg-background">
             <CursorGlow />
-            <Nav hideOnMobile dark />
+            <Nav dark />
 
             <section ref={heroRef} className="relative min-h-[100svh] bg-gradient-dark grain overflow-hidden">
                 <motion.div style={{ y: bgY, opacity: bgOpacity }} className="absolute inset-0 -z-0">
@@ -181,7 +181,7 @@ function Home() {
                             ส่วนผสม<span className="italic text-gradient-gold">จากธรรมชาติ</span>
                         </h2>
                         <p className="text-muted-foreground max-w-sm text-sm md:text-lg">
-                            <span className="text-accent font-semibold">คลิก</span>ที่ผลไม้แต่ละชนิดเพื่อสำรวจคุณค่าทางโภชนาการอย่างละเอียด
+                            <span className="text-accent font-semibold">คลิก </span>ที่ผลไม้แต่ละชนิดเพื่อสำรวจคุณค่าทางโภชนาการอย่างละเอียด
                         </p>
                     </div>
                 </ScrollReveal>
