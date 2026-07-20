@@ -63,7 +63,7 @@ function Home() {
 
                 <div className="relative z-10">
 
-                    <div className="mx-auto max-w-7xl px-4 md:px-8 pt-24 md:pt-20 pb-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div className="mx-auto max-w-7xl px-4 md:px-8 pt-24 md:pt-20 pb-24 md:pb-16 grid md:grid-cols-2 gap-8 md:gap-12 items-center">
                         <div className="text-white order-2 md:order-1 flex flex-col items-center md:items-start text-center md:text-left">
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
@@ -163,7 +163,7 @@ function Home() {
                         </motion.div>
                     </div>
 
-                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-[10px] uppercase tracking-[0.4em] flex flex-col items-center gap-2">
+                    <div className="hidden md:flex absolute bottom-6 left-1/2 -translate-x-1/2 text-white/40 text-[10px] uppercase tracking-[0.4em] flex-col items-center gap-2">
                         <span>Scroll</span>
                         <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 2, repeat: Infinity }} className="w-px h-8 bg-white/30" />
                     </div>
