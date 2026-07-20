@@ -5,8 +5,8 @@ import {
     createRootRouteWithContext,
     useRouter,
     useRouterState,
-    HeadContent,
-    Scripts,
+    useRouter,
+    useRouterState,
 } from "@tanstack/react-router";
 import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
 import type { ReactNode } from "react";
@@ -88,44 +88,11 @@ function ScrollProgress() {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-    head: () => ({
-        meta: [
-            { charSet: "utf-8" },
-            { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-            { title: "VivaPlus" },
-            { name: "description", content: "ViVa+ เครื่องดื่มเพื่อสุขภาพจากผลไม้ไทยแท้ เสาวรส มะม่วงหาวมะนาวโห่ ใบชาเขียวไทย" },
-            { property: "og:title", content: "VivaPlus" },
-            { property: "og:description", content: "เครื่องดื่มเพื่อสุขภาพจากผลไม้ไทยแท้ โดย TCP" },
-            { property: "og:type", content: "website" },
-            { name: "twitter:card", content: "summary_large_image" },
-        ],
-        links: [
-            { rel: "stylesheet", href: appCss },
-            { rel: "icon", href: faviconUrl, type: "image/svg+xml" },
-            { rel: "preconnect", href: "https://fonts.googleapis.com" },
-            { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-            { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" },
-        ],
-    }),
-    shellComponent: RootShell,
     component: RootComponent,
     notFoundComponent: NotFoundComponent,
     errorComponent: ErrorComponent,
 });
 
-function RootShell({ children }: { children: ReactNode }) {
-    return (
-        <html lang="th">
-            <head>
-                <HeadContent />
-            </head>
-            <body className="antialiased min-h-svh flex flex-col">
-                {children}
-                <Scripts />
-            </body>
-        </html>
-    );
-}
 
 function RootComponent() {
     const { queryClient } = Route.useRouteContext();
