@@ -180,8 +180,8 @@ function Home() {
                         <h2 className="font-display text-4xl md:text-6xl max-w-2xl leading-tight">
                             ส่วนผสม<span className="italic text-gradient-gold">จากธรรมชาติ</span>
                         </h2>
-                        <p className="text-muted-foreground max-w-sm text-sm md:text-base">
-                            คลิกที่ผลไม้แต่ละชนิดเพื่อสำรวจคุณค่าทางโภชนาการอย่างละเอียด
+                        <p className="text-muted-foreground max-w-sm text-sm md:text-lg">
+                            <span className="text-accent font-semibold">คลิก</span>ที่ผลไม้แต่ละชนิดเพื่อสำรวจคุณค่าทางโภชนาการอย่างละเอียด
                         </p>
                     </div>
                 </ScrollReveal>
