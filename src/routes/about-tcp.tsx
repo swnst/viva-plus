@@ -27,19 +27,19 @@ function AboutTcpComponent() {
   const tcpCompanies = [
     {
       name: "บริษัท ที.ซี.ฟาร์มาซูติคอล อุตสาหกรรม จำกัด",
-      desc: "ผู้นำด้านการผลิตเครื่องดื่มและอาหารเพื่อสุขภาพระดับสากล ด้วยเทคโนโลยีทันสมัยและมาตรฐานความปลอดภัยสูงสุด",
+      desc: "ผู้ผลิตเครื่องดื่มและอาหารเพื่อสุขภาพชั้นนำระดับโลก มุ่งมั่นพัฒนาสินค้าด้วยเทคโนโลยีที่ทันสมัยและมาตรฐานความปลอดภัยสูงสุด",
     },
     {
       name: "บริษัท ที.จี. เวนดิ้ง แอนด์ โชว์เคส อินดัสทรีส์ จำกัด",
-      desc: "ผู้นำด้านธุรกิจตู้จำหน่ายเครื่องดื่มและสินค้าอัตโนมัติ (Vending Machines) ทันสมัย ครอบคลุมทั่วประเทศ",
+      desc: "ผู้ให้บริการตู้จำหน่ายเครื่องดื่มและสินค้าอัตโนมัติ (TG Vending) ที่ทันสมัย สะดวกสบาย ใช้งานง่าย ตอบโจทย์คนรุ่นใหม่ตลอด 24 ชั่วโมง",
     },
     {
       name: "บริษัท เดอเบล จำกัด (Durbell)",
-      desc: "ผู้นำด้านการจัดจำหน่ายและกระจายสินค้าอุปโภคบริโภคระดับประเทศ ด้วยเครือข่ายโลจิสติกส์ที่ครอบคลุมทุกพื้นที่",
+      desc: "ผู้เชี่ยวชาญด้านการจัดจำหน่ายและกระจายสินค้าอุปโภคบริโภคระดับประเทศ ด้วยเครือข่ายโลจิสติกส์ที่ครอบคลุมทุกภูมิภาคของไทย",
     },
     {
       name: "บริษัท ทีซีพี อินคิวเบเตอร์ จำกัด (TCP Incubator)",
-      desc: "ศูนย์กลางการบ่มเพาะนวัตกรรมผลิตภัณฑ์แห่งอนาคต เพื่อสุขภาพและความเป็นอยู่ที่ดีของผู้บริโภคยุคใหม่",
+      desc: "ศูนย์วิจัยและบ่มเพาะนวัตกรรมผลิตภัณฑ์ใหม่ๆ เพื่อสุขภาพและความเป็นอยู่ที่ดีของผู้บริโภคในอนาคต",
     },
   ];
 
@@ -54,7 +54,7 @@ function AboutTcpComponent() {
             <ScrollReveal direction="up">
               <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-100/90 text-rose-800 text-xs sm:text-sm font-semibold border border-rose-200/80 mb-6">
                 <img src={tcpLogo} alt="TCP" className="h-4 w-auto object-contain" />
-                <span>กลุ่มธุรกิจ TCP (TCP Group)</span>
+                <span>กลุ่มธุรกิจ TCP</span>
               </div>
             </ScrollReveal>
 
@@ -68,7 +68,7 @@ function AboutTcpComponent() {
 
             <ScrollReveal direction="up" delay={0.2}>
               <p className="mt-6 text-base sm:text-lg text-rose-900/80 font-medium max-w-3xl mx-auto leading-relaxed">
-                <strong className="text-rose-950">ViVa+</strong> ภาคภูมิใจที่ได้เป็นหนึ่งในนวัตกรรมเครื่องดื่มเพื่อสุขภาพภายใต้ <strong>กลุ่มธุรกิจ TCP</strong> องค์กรชั้นนำของคนไทยที่มุ่งมั่นส่งมอบผลิตภัณฑ์คุณภาพระดับสากลสู่ผู้บริโภคทั่วโลก
+                <strong className="text-rose-950 font-bold">ViVa+</strong> ภูมิใจที่ได้เป็นหนึ่งในนวัตกรรมเครื่องดื่มเพื่อสุขภาพของ <strong>กลุ่มธุรกิจ TCP</strong> องค์กรสัญชาติไทยที่มุ่งมั่นส่งมอบเครื่องดื่มคุณภาพระดับสากล และร่วมสร้างสังคมที่เติบโตอย่างยั่งยืน
               </p>
             </ScrollReveal>
 
@@ -79,21 +79,21 @@ function AboutTcpComponent() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-gradient-cta text-white font-semibold shadow-soft-rose hover:shadow-hover-rose hover:scale-[1.02] transition-all"
               >
-                <span>เยี่ยมชมเว็บไซต์หลัก TCP.com</span>
+                <span>เข้าสู่เว็บไซต์หลัก TCP.com</span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             </ScrollReveal>
           </div>
         </section>
 
-        {/* 3 Strategic Pillars */}
+        {/* 3 Strategic Pillars - Natural Human Thai Copy without em-dashes */}
         <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-bold text-rose-600 uppercase tracking-widest">
               3 Strategic Pillars
             </span>
             <h2 className="text-3xl font-bold text-rose-950 font-display mt-2">
-              3 เสาหลักขับเคลื่อนองค์กร TCP
+              3 เสาหลักในการขับเคลื่อนกลุ่มธุรกิจ TCP
             </h2>
           </div>
 
@@ -104,10 +104,10 @@ function AboutTcpComponent() {
                   01
                 </div>
                 <h3 className="text-xl font-bold text-rose-950 font-display">
-                  Fulfilling — ปลุกพลังแบรนด์สินค้า
+                  ปลุกพลังแบรนด์สินค้า (Fulfilling)
                 </h3>
                 <p className="text-xs sm:text-sm text-rose-900/75 leading-relaxed">
-                  ส่งมอบผลิตภัณฑ์คุณภาพที่ตอบสนองความต้องการด้านสุขภาพและความเป็นอยู่ที่ดีของผู้บริโภคในทุกช่วงวัย ดั่งเช่น ViVa+
+                  สร้างสรรค์สินค้าคุณภาพที่ตอบโจทย์วิถีชีวิตคนยุคใหม่ ทั้งเรื่องสุขภาพ ความสดชื่น และโภชนาการที่ครบถ้วนเหมือนอย่าง ViVa+
                 </p>
               </div>
             </ScrollReveal>
@@ -118,10 +118,10 @@ function AboutTcpComponent() {
                   02
                 </div>
                 <h3 className="text-xl font-bold text-rose-950 font-display">
-                  Growing — ปลุกพลังธุรกิจเติบโต
+                  ปลุกพลังธุรกิจเติบโต (Growing)
                 </h3>
                 <p className="text-xs sm:text-sm text-rose-900/75 leading-relaxed">
-                  ขยายศักยภาพทางธุรกิจทั้งในไทยและตลาดโลก ด้วยนวัตกรรม เทคโนโลยี และการสนับสนุนพันธมิตรทางธุรกิจรวมถึงเกษตรกรไทย
+                  ขับเคลื่อนธุรกิจสู่ตลาดโลก ควบคู่ไปกับการสนับสนุนพันธมิตรท้องถิ่นและส่งเสริมรายได้ให้แก่พี่น้องเกษตรกรไทยอย่างมั่นคง
                 </p>
               </div>
             </ScrollReveal>
@@ -132,10 +132,10 @@ function AboutTcpComponent() {
                   03
                 </div>
                 <h3 className="text-xl font-bold text-rose-950 font-display">
-                  Caring — ปลุกพลังห่วงใยสิ่งแวดล้อม
+                  ปลุกพลังห่วงใยสิ่งแวดล้อม (Caring)
                 </h3>
                 <p className="text-xs sm:text-sm text-rose-900/75 leading-relaxed">
-                  สร้างความยั่งยืนให้แก่สังคม ชุมชน และสิ่งแวดล้อม มุ่งสู่เป้าหมายความเป็นกลางทางคาร์บอนและการจัดการน้ำอย่างยั่งยืน
+                  ดูแลสิ่งแวดล้อมตั้งแต่ต้นน้ำถึงปลายน้ำ ผ่านโครงการจัดการทรัพยากรน้ำอย่างยั่งยืนและการลดการปล่อยก๊าซเรือนกระจก
                 </p>
               </div>
             </ScrollReveal>

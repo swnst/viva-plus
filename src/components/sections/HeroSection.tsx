@@ -8,15 +8,27 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-16 overflow-hidden bg-gradient-hero"
+      className="relative min-h-[95vh] lg:min-h-screen flex items-center justify-center pt-24 sm:pt-28 pb-16 overflow-hidden bg-gradient-hero"
     >
-      {/* Decorative ambient blurred blobs */}
-      <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-rose-300/30 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
+      {/* Decorative ambient blurred glowing bubbles */}
+      <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-rose-300/25 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
       <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-pink-400/20 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
-      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-rose-200/40 blur-2xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-rose-200/30 blur-2xl pointer-events-none -z-10" />
+
+      {/* Floating subtle ambient mini bubbles in background */}
+      <motion.div
+        animate={{ y: [-15, 15, -15], x: [-5, 5, -5] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        className="absolute top-36 right-[28%] w-12 h-12 rounded-full bg-rose-200/40 backdrop-blur-xs border border-white/60 pointer-events-none -z-10"
+      />
+      <motion.div
+        animate={{ y: [12, -12, 12], x: [4, -4, 4] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-32 left-[12%] w-16 h-16 rounded-full bg-pink-200/35 backdrop-blur-xs border border-white/50 pointer-events-none -z-10"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Typography & CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left z-10">
             {/* Top Pill Badge */}
@@ -24,13 +36,13 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/90 text-rose-800 text-xs sm:text-sm font-semibold border border-rose-200/80 shadow-sm"
+              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-100/90 text-rose-800 text-xs sm:text-sm font-semibold border border-rose-200/80 shadow-sm"
             >
               <img src={tcpLogo} alt="TCP" className="h-3.5 w-auto object-contain" />
               <span>เครื่องดื่มเพื่อสุขภาพระดับพรีเมียม โดย TCP</span>
             </motion.div>
 
-            {/* Main Headline with "ได้ทุกวัน" */}
+            {/* Main Headline */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
@@ -62,7 +74,7 @@ export function HeroSection() {
               ].map((item, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 rounded-lg bg-white/80 text-rose-900 text-xs font-medium border border-rose-100/90 shadow-sm"
+                  className="px-3 py-1 rounded-full bg-white/85 text-rose-900 text-xs font-medium border border-rose-100/90 shadow-2xs"
                 >
                   ✓ {item}
                 </span>
@@ -115,89 +127,85 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Hero Tilted Bottle & Dynamic Floating Badges */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative py-6">
+          {/* Right Column: Hero Tilted Bottle with Beautiful Soft Pink Floating Bubbles */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative py-8 lg:py-12">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-              className="relative flex flex-col items-center justify-center w-full max-w-[420px]"
+              className="relative flex flex-col items-center justify-center w-full max-w-[440px]"
             >
               {/* Backing Ambient Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-88 sm:h-88 rounded-full bg-gradient-to-tr from-rose-400/30 via-pink-300/25 to-amber-200/25 blur-3xl -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-rose-300/35 via-pink-200/30 to-amber-100/30 blur-3xl -z-10" />
 
-              {/* Floating Badge 1 - Top Right */}
+              {/* Floating Soft Bubble 1 - Top Right (Prebiotic & Collagen) */}
               <motion.div
-                animate={{ y: [-8, 8, -8], rotate: [0, 2, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-3 right-2 sm:-right-2 glass-panel px-3.5 py-2 rounded-2xl shadow-soft-rose flex items-center gap-2 text-xs font-bold text-rose-950 border border-white/90 z-20"
+                animate={{ y: [-10, 10, -10], rotate: [0, 3, 0] }}
+                transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-4 -right-1 sm:-right-4 bg-gradient-to-br from-white/90 via-rose-50/90 to-pink-100/80 backdrop-blur-md px-4 py-2.5 rounded-full shadow-[0_8px_25px_rgba(232,74,116,0.15)] flex items-center gap-2 text-xs font-bold text-rose-950 border border-white/90 z-20"
               >
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping" />
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 shadow-[0_0_8px_#E84A74] animate-pulse" />
                 <span>Prebiotic + Collagen</span>
               </motion.div>
 
-              {/* Floating Badge 2 - Mid Left */}
+              {/* Floating Soft Bubble 2 - Mid Left (Karanda Extract) */}
               <motion.div
-                animate={{ y: [8, -8, 8], rotate: [0, -2, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute top-1/3 -left-2 sm:-left-6 glass-panel px-3 py-1.5 rounded-2xl shadow-soft-rose flex items-center gap-1.5 text-[11px] font-bold text-rose-950 border border-white/90 z-20"
+                animate={{ y: [10, -10, 10], rotate: [0, -3, 0] }}
+                transition={{ duration: 6.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                className="absolute top-1/3 -left-3 sm:-left-8 bg-gradient-to-br from-white/90 via-pink-50/90 to-rose-100/80 backdrop-blur-md px-3.5 py-2 rounded-full shadow-[0_8px_25px_rgba(232,74,116,0.15)] flex items-center gap-1.5 text-xs font-bold text-rose-950 border border-white/90 z-20"
               >
-                <Sparkles className="w-3.5 h-3.5 text-rose-500" />
+                <div className="w-5 h-5 rounded-full bg-rose-100 flex items-center justify-center text-rose-600">
+                  <Sparkles className="w-3 h-3" />
+                </div>
                 <span>สารสกัดมะม่วงหาวมะนาวโห่</span>
               </motion.div>
 
-              {/* Tilted Floating Central Bottle */}
+              {/* Tilted Floating Central Bottle with plenty of breathing room */}
               <motion.div
                 animate={{
-                  y: [-10, 10, -10],
-                  rotate: [-7, -5, -9, -7],
+                  y: [-12, 12, -12],
+                  rotate: [-8, -5, -10, -8],
                 }}
                 transition={{
                   duration: 6,
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative z-10 filter drop-shadow-[0_25px_35px_rgba(232,74,116,0.3)] flex items-center justify-center my-4 cursor-pointer hover:scale-105 transition-transform duration-300"
+                className="relative z-10 filter drop-shadow-[0_25px_40px_rgba(232,74,116,0.28)] flex items-center justify-center my-6 sm:my-8 cursor-pointer hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src={bottleImg}
                   alt="ViVa+ Prebiotic Collagen Drink"
-                  className="w-[230px] sm:w-[280px] lg:w-[320px] max-h-[460px] h-auto object-contain select-none"
+                  className="w-[220px] sm:w-[260px] lg:w-[300px] max-h-[460px] h-auto object-contain select-none"
                   loading="eager"
                 />
               </motion.div>
 
-              {/* Floating Highlight Cards - Bottom Left & Bottom Right */}
-              <div className="w-full grid grid-cols-2 gap-2.5 z-20 mt-1">
+              {/* Floating Soft Bubble Highlights - Bottom Row with generous spacing */}
+              <div className="w-full flex items-center justify-center gap-3 z-20 mt-2">
                 <motion.div
-                  animate={{ y: [-4, 4, -4] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
-                  className="glass-panel p-2.5 sm:p-3 rounded-2xl shadow-soft-rose border border-white/90 text-left"
+                  animate={{ y: [-5, 5, -5] }}
+                  transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                  className="bg-gradient-to-br from-white/90 via-rose-50/85 to-pink-50/80 backdrop-blur-md px-4 py-2 rounded-full shadow-[0_6px_20px_rgba(232,74,116,0.12)] border border-white/90 flex items-center gap-2"
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 shrink-0">
-                      <Heart className="w-3.5 h-3.5" />
-                    </div>
-                    <div>
-                      <p className="text-[11px] font-bold text-rose-950 leading-tight">ดื่มง่าย อร่อยสดชื่น</p>
-                      <p className="text-[9px] text-rose-800/70">หวานกำลังดี ดีต่อสุขภาพ</p>
-                    </div>
+                  <div className="w-6 h-6 rounded-full bg-rose-100/90 flex items-center justify-center text-rose-600 shrink-0">
+                    <Heart className="w-3.5 h-3.5 fill-rose-100" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[11px] font-bold text-rose-950 leading-tight">ดื่มง่าย สดชื่น 20 kcal</p>
                   </div>
                 </motion.div>
 
                 <motion.div
-                  animate={{ y: [4, -4, 4] }}
-                  transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
-                  className="glass-panel p-2.5 sm:p-3 rounded-2xl shadow-soft-rose border border-white/90 text-left"
+                  animate={{ y: [5, -5, 5] }}
+                  transition={{ duration: 5.4, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
+                  className="bg-gradient-to-br from-white/90 via-rose-50/85 to-pink-50/80 backdrop-blur-md px-4 py-2 rounded-full shadow-[0_6px_20px_rgba(232,74,116,0.12)] border border-white/90 flex items-center gap-2"
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 shrink-0">
-                      <ShieldCheck className="w-3.5 h-3.5" />
-                    </div>
-                    <div>
-                      <p className="text-[11px] font-bold text-rose-950 leading-tight">คุณภาพโดย TCP</p>
-                      <p className="text-[9px] text-rose-800/70">ปลอดภัย ได้มาตรฐาน</p>
-                    </div>
+                  <div className="w-6 h-6 rounded-full bg-rose-100/90 flex items-center justify-center text-rose-600 shrink-0">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                  </div>
+                  <div className="text-left">
+                    <p className="text-[11px] font-bold text-rose-950 leading-tight">มาตรฐาน TCP Group</p>
                   </div>
                 </motion.div>
               </div>
