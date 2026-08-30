@@ -3,6 +3,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles, MapPin } from "lucide-react";
 import { scrollToSection } from "@/lib/lenis";
+import tcpLogo from "@/assets/tcp.svg";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,29 +42,28 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "glass-nav py-3.5 shadow-sm"
-            : "bg-transparent py-5"
+            ? "glass-nav py-3 shadow-sm"
+            : "bg-transparent py-4 sm:py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo Brand */}
           <Link
             to="/"
-            className="flex items-center gap-3 group transition-transform duration-300 hover:scale-[1.02]"
+            className="flex items-center gap-2.5 sm:gap-3 group transition-transform duration-300 hover:scale-[1.02]"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center shadow-md shadow-rose-300/40 text-white font-bold text-lg font-display tracking-tight border-2 border-white">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center shadow-md shadow-rose-300/40 text-white font-bold text-base sm:text-lg font-display tracking-tight border-2 border-white shrink-0">
               V+
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-1.5">
-                <span className="text-xl font-bold font-display tracking-tight text-rose-950">
-                  Viva<span className="text-rose-500">Plus</span>
+                <span className="text-xl sm:text-2xl font-bold font-display tracking-tight text-rose-950">
+                  ViVa<span className="text-rose-500">+</span>
                 </span>
-                <span className="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 rounded bg-rose-100/80 text-rose-700 border border-rose-200">
-                  TCP Group
-                </span>
+                <div className="h-4 w-px bg-rose-200 mx-0.5" />
+                <img src={tcpLogo} alt="TCP Group" className="h-4 w-auto object-contain opacity-85" />
               </div>
-              <span className="text-[11px] text-rose-900/60 font-medium tracking-wide">
+              <span className="text-[10px] sm:text-[11px] text-rose-900/60 font-medium tracking-wide">
                 Prebiotic & Collagen Drink
               </span>
             </div>
@@ -120,7 +120,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-[70px] z-40 p-4 lg:hidden"
+            className="fixed inset-x-0 top-[65px] z-40 p-4 lg:hidden"
           >
             <div className="glass-nav rounded-3xl p-6 shadow-xl border border-rose-200/80 flex flex-col gap-3">
               {navLinks.map((item) => (
@@ -138,7 +138,10 @@ export function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="px-4 py-3 rounded-2xl text-base font-semibold text-rose-950 hover:bg-rose-100/60 transition-colors flex items-center justify-between"
               >
-                <span>เกี่ยวกับกลุ่มธุรกิจ TCP</span>
+                <div className="flex items-center gap-2">
+                  <span>เกี่ยวกับกลุ่มธุรกิจ TCP</span>
+                  <img src={tcpLogo} alt="TCP" className="h-3.5 w-auto object-contain" />
+                </div>
                 <Sparkles className="w-4 h-4 text-rose-500" />
               </Link>
 

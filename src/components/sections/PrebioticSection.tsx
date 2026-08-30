@@ -62,8 +62,8 @@ export function PrebioticSection() {
                 </div>
               </div>
 
-              {/* Prebiotic Box */}
-              <div className="rounded-2xl p-6 bg-gradient-to-br from-rose-500 to-pink-500 text-white flex flex-col justify-between shadow-md shadow-rose-300/40 relative overflow-hidden">
+              {/* Prebiotic Box - Toned down from hotpink to refined warm rose CTA gradient */}
+              <div className="rounded-2xl p-6 bg-gradient-cta text-white flex flex-col justify-between shadow-md shadow-rose-300/30 relative overflow-hidden">
                 <div className="relative z-10">
                   <div className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-bold text-xs mb-3">
                     Prebiotics (พรีไบโอติกส์) ★
@@ -76,7 +76,7 @@ export function PrebioticSection() {
                   </p>
                 </div>
                 <div className="mt-4 pt-3 border-t border-white/20 text-xs text-rose-100 font-medium relative z-10">
-                  ✨ มีอยู่ใน Viva Plus ดื่มง่าย เสริมอาหารให้ลำไส้ทุกวัน
+                  ✨ มีอยู่ใน ViVa+ ดื่มง่าย เสริมอาหารให้ลำไส้ทุกวัน
                 </div>
               </div>
             </div>
@@ -120,7 +120,7 @@ export function PrebioticSection() {
 
           <ScrollReveal direction="up" delay={0.3}>
             <div className="bg-white rounded-3xl p-8 border border-rose-100 shadow-soft-rose text-center space-y-4 hover:-translate-y-1 transition-transform">
-              <div className="w-14 h-14 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mx-auto">
+              <div className="w-14 h-14 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center mx-auto">
                 <ShieldCheck className="w-7 h-7" />
               </div>
               <h3 className="text-xl font-bold text-rose-950 font-display">

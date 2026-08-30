@@ -134,7 +134,7 @@ export function ProductSection() {
         <ScrollReveal direction="up" delay={0.3} className="mt-14">
           <div className="glass-panel bg-gradient-to-r from-rose-100/90 via-pink-50/90 to-rose-100/90 rounded-3xl p-8 sm:p-10 border border-rose-200 text-center max-w-4xl mx-auto shadow-sm">
             <h3 className="text-xl sm:text-2xl font-bold text-rose-950 font-display">
-              ผลลัพธ์ที่สัมผัสได้เมื่อดื่ม Viva Plus เป็นประจำ
+              ผลลัพธ์ที่สัมผัสได้เมื่อดื่ม ViVa+ เป็นประจำ
             </h3>
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
               <div className="bg-white/80 p-4 rounded-2xl border border-rose-100 shadow-xs">

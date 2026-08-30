@@ -24,7 +24,7 @@ function NotFoundComponent() {
             to="/"
             className="inline-flex items-center justify-center rounded-full bg-gradient-cta px-6 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-105 shadow-soft-rose"
           >
-            กลับสู่หน้าหลัก Viva Plus
+            กลับสู่หน้าหลัก ViVa+
           </Link>
         </div>
       </div>

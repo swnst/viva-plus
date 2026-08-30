@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { scrollToSection } from "@/lib/lenis";
 import { ExternalLink, Heart, ShieldCheck, Sparkles, MapPin } from "lucide-react";
+import tcpLogo from "@/assets/tcp.svg";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,6 +9,13 @@ export function Footer() {
   const handleNavClick = (sectionId: string) => {
     scrollToSection(sectionId);
   };
+
+  const socialLinks = [
+    { name: "Facebook", url: "https://www.facebook.com/TCPGroupThailand" },
+    { name: "TikTok", url: "https://www.tiktok.com/@tcpgroup" },
+    { name: "Shopee Mall", url: "https://shopee.co.th/tcp_official_store" },
+    { name: "Lazada LazMall", url: "https://www.lazada.co.th/shop/tcp-official-store" },
+  ];
 
   return (
     <footer className="bg-[#1F0E17] text-rose-100/90 pt-16 pb-12 border-t border-rose-950">
@@ -20,8 +28,9 @@ export function Footer() {
                 V+
               </div>
               <span className="text-2xl font-bold font-display text-white">
-                Viva<span className="text-rose-400">Plus</span>
+                ViVa<span className="text-rose-400">+</span>
               </span>
+              <img src={tcpLogo} alt="TCP" className="h-4 w-auto object-contain brightness-0 invert opacity-80 ml-1" />
             </div>
             <p className="text-sm text-rose-200/70 leading-relaxed">
               เครื่องดื่มเพื่อสุขภาพระดับพรีเมียม ผสานพรีไบโอติก คอลลาเจน วิตามินซี ซิงค์ และคุณค่าแท้จากมะม่วงหาวมะนาวโห่ผลผลิตเกษตรกรไทย โดยกลุ่มธุรกิจ TCP
@@ -132,29 +141,40 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Availability */}
+          {/* Online Channels & Locations */}
           <div className="space-y-4">
             <h4 className="text-base font-semibold text-white font-display tracking-wide">
-              ช่องทางจำหน่าย
+              ช่องทางออนไลน์ & จำหน่าย
             </h4>
             <div className="text-sm text-rose-200/70 space-y-2 leading-relaxed">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>ตู้จำหน่ายเครื่องดื่มอัตโนมัติ TCP (TG Vending) ทั่วประเทศ</span>
+                <span>ตู้ TG Vending ทั่วประเทศ</span>
               </p>
-              <p>ร้านสะดวกซื้อและซูเปอร์มาร์เก็ตชั้นนำ</p>
             </div>
+            
             <div className="pt-2">
-              <span className="inline-block px-3 py-1.5 text-xs font-semibold rounded-lg bg-rose-900/50 text-rose-300 border border-rose-800/40">
-                TCP ปลุกพลัง เพื่อวันที่ดีกว่า
-              </span>
+              <p className="text-xs font-semibold text-rose-300 mb-2">ช่องทางออนไลน์ TCP :</p>
+              <div className="flex flex-wrap gap-2">
+                {socialLinks.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2.5 py-1 rounded-lg text-xs font-medium bg-rose-900/60 hover:bg-rose-800 text-rose-200 border border-rose-800/50 transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-rose-300/60">
-          <p>© {currentYear} Viva Plus. A brand by TCP Group (T.C. Pharmaceutical Industries Co., Ltd.). All rights reserved.</p>
+          <p>© {currentYear} ViVa+. A brand by TCP Group (T.C. Pharmaceutical Industries Co., Ltd.). All rights reserved.</p>
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1">
               สร้างสรรค์ด้วยความใส่ใจเพื่อสุขภาพผู้หญิง <Heart className="w-3 h-3 text-rose-400 fill-rose-400 inline" />

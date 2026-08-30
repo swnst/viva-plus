@@ -4,9 +4,9 @@ import { Footer } from "@/components/Footer";
 import { ScrollReveal } from "@/components/ScrollReveal";
 import {
   ExternalLink,
-  Building2,
   Layers,
 } from "lucide-react";
+import tcpLogo from "@/assets/tcp.svg";
 
 export const Route = createFileRoute("/about-tcp")({
   component: AboutTcpComponent,
@@ -21,7 +21,7 @@ function AboutTcpComponent() {
     { name: "Puriku (เพียวริคุ)", category: "ชาขาวพร้อมดื่มผสมน้ำผลไม้" },
     { name: "Sunsnack (ซันสแนค)", category: "ขนมขบเคี้ยวเมล็ดทานตะวันอบกรอบ" },
     { name: "Farm Zaa (ฟาร์มซ่า)", category: "เครื่องดื่มจากวัตถุดิบเกษตรกรไทย" },
-    { name: "Viva Plus (วีว่า พลัส)", category: "เครื่องดื่มพรีไบโอติกคอลลาเจนระดับพรีเมียม" },
+    { name: "ViVa+ (วีว่า พลัส)", category: "เครื่องดื่มพรีไบโอติกคอลลาเจนระดับพรีเมียม" },
   ];
 
   const tcpCompanies = [
@@ -52,8 +52,8 @@ function AboutTcpComponent() {
         <section className="relative py-16 lg:py-24 overflow-hidden bg-gradient-hero">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <ScrollReveal direction="up">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-100/90 text-rose-800 text-xs sm:text-sm font-semibold border border-rose-200/80 mb-6">
-                <Building2 className="w-4 h-4 text-rose-600" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-rose-100/90 text-rose-800 text-xs sm:text-sm font-semibold border border-rose-200/80 mb-6">
+                <img src={tcpLogo} alt="TCP" className="h-4 w-auto object-contain" />
                 <span>กลุ่มธุรกิจ TCP (TCP Group)</span>
               </div>
             </ScrollReveal>
@@ -68,7 +68,7 @@ function AboutTcpComponent() {
 
             <ScrollReveal direction="up" delay={0.2}>
               <p className="mt-6 text-base sm:text-lg text-rose-900/80 font-medium max-w-3xl mx-auto leading-relaxed">
-                Viva Plus ภาคภูมิใจที่ได้เป็นหนึ่งในนวัตกรรมเครื่องดื่มเพื่อสุขภาพภายใต้ <strong>กลุ่มธุรกิจ TCP</strong> องค์กรชั้นนำของคนไทยที่มุ่งมั่นส่งมอบผลิตภัณฑ์คุณภาพระดับสากลสู่ผู้บริโภคทั่วโลก
+                <strong className="text-rose-950">ViVa+</strong> ภาคภูมิใจที่ได้เป็นหนึ่งในนวัตกรรมเครื่องดื่มเพื่อสุขภาพภายใต้ <strong>กลุ่มธุรกิจ TCP</strong> องค์กรชั้นนำของคนไทยที่มุ่งมั่นส่งมอบผลิตภัณฑ์คุณภาพระดับสากลสู่ผู้บริโภคทั่วโลก
               </p>
             </ScrollReveal>
 
@@ -107,7 +107,7 @@ function AboutTcpComponent() {
                   Fulfilling — ปลุกพลังแบรนด์สินค้า
                 </h3>
                 <p className="text-xs sm:text-sm text-rose-900/75 leading-relaxed">
-                  ส่งมอบผลิตภัณฑ์คุณภาพที่ตอบสนองความต้องการด้านสุขภาพและความเป็นอยู่ที่ดีของผู้บริโภคในทุกช่วงวัย ดั่งเช่น Viva Plus
+                  ส่งมอบผลิตภัณฑ์คุณภาพที่ตอบสนองความต้องการด้านสุขภาพและความเป็นอยู่ที่ดีของผู้บริโภคในทุกช่วงวัย ดั่งเช่น ViVa+
                 </p>
               </div>
             </ScrollReveal>
@@ -201,7 +201,7 @@ function AboutTcpComponent() {
               to="/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-rose-900 text-sm font-semibold border border-rose-200 shadow-xs hover:bg-rose-50 transition-colors"
             >
-              <span>← กลับสู่หน้าหลัก Viva Plus</span>
+              <span>← กลับสู่หน้าหลัก ViVa+</span>
             </Link>
           </div>
         </section>

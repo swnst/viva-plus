@@ -17,12 +17,12 @@ export function KarandaSection() {
             <ScrollReveal direction="left">
               <div className="relative">
                 {/* Main Fruit Showcase Card */}
-                <div className="bg-gradient-to-br from-rose-100/80 via-pink-50/90 to-rose-200/50 rounded-3xl p-8 border border-rose-200 shadow-soft-rose relative overflow-hidden flex flex-col items-center justify-center text-center">
-                  <div className="w-56 h-56 sm:w-64 sm:h-64 relative flex items-center justify-center">
+                <div className="bg-gradient-to-br from-rose-100/80 via-pink-50/90 to-rose-200/50 rounded-3xl p-6 sm:p-8 border border-rose-200 shadow-soft-rose relative overflow-hidden flex flex-col items-center justify-center text-center">
+                  <div className="w-60 h-60 sm:w-72 sm:h-72 relative flex items-center justify-center rounded-2xl overflow-hidden shadow-inner bg-white/40">
                     <img
                       src={karandaImg}
-                      alt="มะม่วงหาวมะนาวโห่ Carissa carandas"
-                      className="w-full h-full object-contain filter drop-shadow-xl hover:scale-105 transition-transform duration-500"
+                      alt="มะม่วงหาวมะนาวโห่ Carissa carandas ผลผลิตเกษตรกรไทย"
+                      className="w-full h-full object-cover filter drop-shadow-md hover:scale-105 transition-transform duration-500 rounded-2xl"
                     />
                   </div>
                   <div className="mt-4">
@@ -83,7 +83,7 @@ export function KarandaSection() {
 
             <ScrollReveal direction="up" delay={0.2}>
               <p className="text-base text-rose-900/80 leading-relaxed font-medium">
-                Viva Plus คัดสรร <strong>มะม่วงหาวมะนาวโห่</strong> จากแหล่งเพาะปลูกธรรมชาติของกลุ่มเกษตรกรไทย นำมาผ่านกระบวนการสกัดอย่างพิถีพิถันเพื่อคงคุณค่าสารชีวภาพสูงสุด มอบรสชาติหวานอมเปรี้ยวสดชื่นเป็นเอกลักษณ์
+                <strong className="text-rose-950 font-bold">ViVa+</strong> คัดสรร <strong>มะม่วงหาวมะนาวโห่</strong> จากแหล่งเพาะปลูกธรรมชาติของกลุ่มเกษตรกรไทย นำมาผ่านกระบวนการสกัดอย่างพิถีพิถันเพื่อคงคุณค่าสารชีวภาพสูงสุด มอบรสชาติหวานอมเปรี้ยวสดชื่นเป็นเอกลักษณ์
               </p>
             </ScrollReveal>
 

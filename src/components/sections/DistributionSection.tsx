@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import { MapPin, ShoppingBag, Sparkles, Smartphone, Check, Building2 } from "lucide-react";
+import {
+  MapPin,
+  ShoppingBag,
+  Sparkles,
+  Smartphone,
+  Check,
+  Building2,
+  ExternalLink,
+} from "lucide-react";
+import tcpLogo from "@/assets/tcp.svg";
 import "leaflet/dist/leaflet.css";
 
 // Dynamic map renderer for client side
@@ -71,6 +80,37 @@ function MapView() {
 }
 
 export function DistributionSection() {
+  const onlineChannels = [
+    {
+      name: "Facebook",
+      title: "TCP Group Thailand",
+      url: "https://www.facebook.com/TCPGroupThailand",
+      badge: "Official Page",
+      color: "hover:border-blue-300 hover:bg-blue-50/50",
+    },
+    {
+      name: "TikTok",
+      title: "@tcpgroup",
+      url: "https://www.tiktok.com/@tcpgroup",
+      badge: "Official TikTok",
+      color: "hover:border-stone-400 hover:bg-stone-50",
+    },
+    {
+      name: "Shopee",
+      title: "TCP Official Store",
+      url: "https://shopee.co.th/tcp_official_store",
+      badge: "Shopee Mall",
+      color: "hover:border-orange-300 hover:bg-orange-50/50",
+    },
+    {
+      name: "Lazada",
+      title: "TCP Flagship Store",
+      url: "https://www.lazada.co.th/shop/tcp-official-store",
+      badge: "LazMall",
+      color: "hover:border-indigo-300 hover:bg-indigo-50/50",
+    },
+  ];
+
   return (
     <section id="distribution" className="py-24 bg-[#FFF8F9] relative overflow-hidden">
       {/* Ambient background styling */}
@@ -82,7 +122,7 @@ export function DistributionSection() {
           <ScrollReveal direction="up">
             <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-100 text-rose-800 text-xs font-semibold uppercase tracking-wider">
               <ShoppingBag className="w-3.5 h-3.5 text-rose-600" />
-              <span>Where to Buy</span>
+              <span>Where to Buy & Online Channels</span>
             </span>
           </ScrollReveal>
 
@@ -95,18 +135,18 @@ export function DistributionSection() {
 
           <ScrollReveal direction="up" delay={0.2}>
             <p className="text-base sm:text-lg text-rose-900/75 leading-relaxed font-medium">
-              พบกับ Viva Plus ได้อย่างสะดวกผ่านตู้จำหน่ายเครื่องดื่มอัตโนมัติ TCP และร้านค้าชั้นนำ
+              พบกับ ViVa+ ได้อย่างสะดวกผ่านตู้จำหน่ายเครื่องดื่มอัตโนมัติ TCP ร้านค้าชั้นนำ และช่องทางออนไลน์อย่างเป็นทางการ
             </p>
           </ScrollReveal>
         </div>
 
         {/* 2 Main Channels: TCP Vending & Retail */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Main Hero Card: TCP Vending Machine */}
+          {/* Main Hero Card: TCP Vending Machine - Toned down from hot pink to refined rose CTA gradient */}
           <ScrollReveal direction="up" delay={0.1} className="lg:col-span-7">
-            <div className="h-full bg-gradient-to-br from-rose-500 to-pink-600 rounded-3xl p-8 sm:p-10 text-white shadow-hover-rose relative overflow-hidden flex flex-col justify-between">
+            <div className="h-full bg-gradient-cta rounded-3xl p-8 sm:p-10 text-white shadow-soft-rose relative overflow-hidden flex flex-col justify-between">
               <div className="relative z-10 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold text-white">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-semibold text-white">
                   <Sparkles className="w-3.5 h-3.5" />
                   <span>นวัตกรรมโดย TG Vending ในเครือ TCP</span>
                 </div>
@@ -114,7 +154,7 @@ export function DistributionSection() {
                   ตู้จำหน่ายเครื่องดื่มอัตโนมัติ TCP (TG Vending)
                 </h3>
                 <p className="text-xs sm:text-sm text-rose-100 leading-relaxed max-w-xl">
-                  กดรับ Viva Plus เย็นสดชื่นได้ตลอด 24 ชั่วโมง ติดตั้งตามสถานีรถไฟฟ้า BTS, MRT, โรงพยาบาล, มหาวิทยาลัย, อาคารสำนักงาน และคอนโดมิเนียมชั้นนำทั่วกรุงเทพฯ และหัวเมืองใหญ่
+                  กดรับ ViVa+ เย็นสดชื่นได้ตลอด 24 ชั่วโมง ติดตั้งตามสถานีรถไฟฟ้า BTS, MRT, โรงพยาบาล, มหาวิทยาลัย, อาคารสำนักงาน และคอนโดมิเนียมชั้นนำทั่วกรุงเทพฯ และหัวเมืองใหญ่
                 </p>
 
                 <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-rose-50 font-medium">
@@ -165,7 +205,7 @@ export function DistributionSection() {
                   ร้านค้าและช่องทางจัดจำหน่าย
                 </h3>
                 <p className="text-xs sm:text-sm text-rose-900/75 leading-relaxed">
-                  สามารถเลือกซื้อ Viva Plus ได้ที่ชั้นวางเครื่องดื่มเพื่อสุขภาพ ณ ร้านสะดวกซื้อและห้างสรรพสินค้าชั้นนำทั่วประเทศ
+                  สามารถเลือกซื้อ ViVa+ ได้ที่ชั้นวางเครื่องดื่มเพื่อสุขภาพ ณ ร้านสะดวกซื้อและห้างสรรพสินค้าชั้นนำทั่วประเทศ
                 </p>
 
                 <div className="pt-2 space-y-2.5">
@@ -187,12 +227,59 @@ export function DistributionSection() {
                 </div>
               </div>
 
-              <p className="text-[11px] text-rose-800/60 mt-6 pt-4 border-t border-rose-100 text-center">
-                * บริหารการกระจายสินค้าโดย บริษัท เดอเบล จำกัด (Durbell) ในเครือ TCP
-              </p>
+              <div className="mt-6 pt-4 border-t border-rose-100 flex items-center justify-between gap-2">
+                <p className="text-[11px] text-rose-800/60">
+                  * กระจายสินค้าโดย บริษัท เดอเบล จำกัด (Durbell)
+                </p>
+                <img src={tcpLogo} alt="TCP" className="h-3.5 w-auto object-contain opacity-70" />
+              </div>
             </div>
           </ScrollReveal>
         </div>
+
+        {/* Online Channels Section */}
+        <ScrollReveal direction="up" delay={0.25} className="mt-12">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-rose-200 shadow-soft-rose">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-6 border-b border-rose-100">
+              <div>
+                <span className="text-xs font-bold text-rose-600 uppercase tracking-wider">
+                  TCP Official Online Channels
+                </span>
+                <h3 className="text-xl font-bold text-rose-950 font-display mt-0.5">
+                  สั่งซื้อออนไลน์ & ติดตามข่าวสาร TCP
+                </h3>
+              </div>
+              <span className="text-xs text-rose-800/70">
+                ส่งตรงถึงหน้าบ้านอย่างปลอดภัย
+              </span>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {onlineChannels.map((ch, idx) => (
+                <a
+                  key={idx}
+                  href={ch.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-4 rounded-2xl border border-rose-100 bg-[#FFF9FA] ${ch.color} transition-all duration-300 flex flex-col justify-between group shadow-2xs hover:-translate-y-1`}
+                >
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-bold text-rose-950 font-display">
+                        {ch.name}
+                      </span>
+                      <ExternalLink className="w-3.5 h-3.5 text-rose-400 group-hover:text-rose-600 transition-colors" />
+                    </div>
+                    <p className="text-sm font-semibold text-rose-900">{ch.title}</p>
+                  </div>
+                  <span className="inline-block mt-3 px-2 py-0.5 rounded-md text-[10px] font-medium bg-rose-100/70 text-rose-700 w-fit">
+                    {ch.badge}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
 
         {/* Map & Key Locations View */}
         <ScrollReveal direction="up" delay={0.3} className="mt-12">
