@@ -98,8 +98,8 @@ export function DistributionSection() {
     },
     {
       name: "TikTok",
-      title: "@tcpgroup",
-      url: "https://www.tiktok.com/@tcpgroup",
+      title: "@tcp_online",
+      url: "https://www.tiktok.com/@tcp_online?_t=8cE91EwRNzO&_r=1",
       badge: "Official TikTok",
       icon: TikTokIcon,
       color: "hover:border-stone-400 hover:bg-stone-50",

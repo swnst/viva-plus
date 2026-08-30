@@ -19,7 +19,7 @@ export function Footer() {
 
   const socialLinks = [
     { name: "Facebook", url: "https://www.facebook.com/TCPGroupThailand", icon: FacebookIcon },
-    { name: "TikTok", url: "https://www.tiktok.com/@tcpgroup", icon: TikTokIcon },
+    { name: "TikTok", url: "https://www.tiktok.com/@tcp_online?_t=8cE91EwRNzO&_r=1", icon: TikTokIcon },
     { name: "Shopee", url: "https://shopee.co.th/tcp_official_store", icon: ShopeeIcon },
     { name: "Lazada", url: "https://www.lazada.co.th/shop/tcp-official-store", icon: LazadaIcon },
   ];

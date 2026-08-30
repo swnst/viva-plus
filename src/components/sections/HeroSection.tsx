@@ -5,70 +5,6 @@ import bottleImg from "@/assets/viva-bottle.png";
 import tcpLogo from "@/assets/tcp.svg";
 
 export function HeroSection() {
-  // Circular 3D glass bubble components matching the reference image exactly
-  const circularBubbles = [
-    {
-      id: "prebiotic",
-      title: "PREBIOTIC",
-      sub: "(INULIN)",
-      icon: Activity,
-      textColor: "text-[#D92A64]",
-      iconColor: "text-[#E84A74]",
-      gradient: "from-white/95 via-rose-100/90 to-pink-200/80",
-      borderGlow: "border-white shadow-[0_10px_25px_rgba(232,74,116,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(232,74,116,0.2)]",
-      pos: "top-2 sm:top-4 right-0 sm:-right-4 lg:-right-6",
-      delay: 0,
-      floatY: [-8, 8, -8],
-      duration: 5.5,
-      size: "w-20 h-20 sm:w-24 sm:h-24",
-    },
-    {
-      id: "collagen",
-      title: "COLLAGEN",
-      sub: "",
-      icon: Sparkles,
-      textColor: "text-[#C72358]",
-      iconColor: "text-[#E84A74]",
-      gradient: "from-white/95 via-pink-100/90 to-rose-200/80",
-      borderGlow: "border-white shadow-[0_10px_25px_rgba(232,74,116,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(232,74,116,0.2)]",
-      pos: "top-[27%] sm:top-[28%] right-2 sm:-right-6 lg:-right-8",
-      delay: 0.8,
-      floatY: [8, -8, 8],
-      duration: 6.2,
-      size: "w-20 h-20 sm:w-24 sm:h-24",
-    },
-    {
-      id: "zinc",
-      title: "ZINC",
-      sub: "",
-      icon: Shield,
-      textColor: "text-[#8E3B99]",
-      iconColor: "text-[#9C27B0]",
-      gradient: "from-white/95 via-purple-100/90 to-fuchsia-200/80",
-      borderGlow: "border-white shadow-[0_10px_25px_rgba(156,39,176,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(156,39,176,0.2)]",
-      pos: "top-[54%] sm:top-[55%] right-0 sm:-right-4 lg:-right-6",
-      delay: 1.4,
-      floatY: [-6, 6, -6],
-      duration: 5.8,
-      size: "w-20 h-20 sm:w-24 sm:h-24",
-    },
-    {
-      id: "vitaminc",
-      title: "VITAMIN C",
-      sub: "",
-      icon: Sun,
-      textColor: "text-[#DD6B20]",
-      iconColor: "text-[#EA580C]",
-      gradient: "from-white/95 via-orange-100/90 to-amber-200/80",
-      borderGlow: "border-white shadow-[0_10px_25px_rgba(234,88,12,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(234,88,12,0.2)]",
-      pos: "top-[80%] sm:top-[81%] right-2 sm:-right-2 lg:-right-4",
-      delay: 0.4,
-      floatY: [6, -6, 6],
-      duration: 6.5,
-      size: "w-20 h-20 sm:w-24 sm:h-24",
-    },
-  ];
-
   return (
     <section
       id="hero"
@@ -78,18 +14,6 @@ export function HeroSection() {
       <div className="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-rose-300/25 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
       <div className="absolute bottom-10 -right-20 w-96 h-96 rounded-full bg-pink-400/20 blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
       <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-rose-200/30 blur-2xl pointer-events-none -z-10" />
-
-      {/* Decorative ambient water drop bubbles on the left */}
-      <motion.div
-        animate={{ y: [-15, 15, -15], scale: [1, 1.05, 1] }}
-        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="hidden md:block absolute top-36 left-[8%] w-14 h-14 rounded-full bg-gradient-to-br from-white/90 to-rose-200/60 backdrop-blur-md shadow-[0_8px_20px_rgba(232,74,116,0.15),inset_0_2px_4px_white] pointer-events-none z-10 border border-white"
-      />
-      <motion.div
-        animate={{ y: [12, -12, 12], scale: [1, 1.08, 1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="hidden md:block absolute bottom-32 left-[18%] w-10 h-10 rounded-full bg-gradient-to-br from-white/90 to-pink-200/60 backdrop-blur-md shadow-[0_6px_16px_rgba(232,74,116,0.15),inset_0_2px_4px_white] pointer-events-none z-10 border border-white"
-      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
@@ -191,13 +115,68 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Hero Tilted Bottle with 4 Circular 3D Glass Bubbles */}
+          {/* Right Column: Hero Tilted Bottle with 4 3D Spheres Distributed Around the Bottle */}
           <div className="lg:col-span-6 flex flex-col items-center justify-center relative py-6 sm:py-10">
             <div className="relative flex items-center justify-center w-full max-w-[480px]">
               {/* Backing Ambient Glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-rose-300/35 via-pink-200/30 to-amber-100/30 blur-3xl -z-10" />
 
-              {/* Tilted Floating Central Bottle with realistic angle */}
+              {/* 1. TOP-RIGHT: PREBIOTIC SPHERE */}
+              <motion.div
+                animate={{ y: [-8, 8, -8], rotate: [0, 2, 0] }}
+                transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-2 right-1 sm:-right-2 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-b from-white/95 via-rose-100/90 to-pink-200/85 border-2 border-white shadow-[0_10px_25px_rgba(232,74,116,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(232,74,116,0.2)] flex flex-col items-center justify-center p-2 text-center select-none backdrop-blur-md cursor-pointer hover:scale-110 transition-transform duration-300 z-20 overflow-hidden"
+              >
+                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-3 rounded-full bg-white/80 blur-[1px] pointer-events-none" />
+                <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-[#E84A74] mb-0.5 shrink-0" />
+                <span className="text-[9px] sm:text-[10px] font-extrabold tracking-tight text-[#D92A64] leading-tight font-display">
+                  PREBIOTIC
+                </span>
+                <span className="text-[7px] sm:text-[8px] font-bold text-[#D92A64] leading-none mt-0.5">
+                  (INULIN)
+                </span>
+              </motion.div>
+
+              {/* 2. TOP-LEFT: COLLAGEN SPHERE */}
+              <motion.div
+                animate={{ y: [8, -8, 8], rotate: [0, -2, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
+                className="absolute top-8 left-1 sm:-left-3 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-b from-white/95 via-pink-100/90 to-rose-200/85 border-2 border-white shadow-[0_10px_25px_rgba(232,74,116,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(232,74,116,0.2)] flex flex-col items-center justify-center p-2 text-center select-none backdrop-blur-md cursor-pointer hover:scale-110 transition-transform duration-300 z-20 overflow-hidden"
+              >
+                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-3 rounded-full bg-white/80 blur-[1px] pointer-events-none" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-[#E84A74] mb-0.5 shrink-0" />
+                <span className="text-[9px] sm:text-[10px] font-extrabold tracking-tight text-[#C72358] leading-tight font-display">
+                  COLLAGEN
+                </span>
+              </motion.div>
+
+              {/* 3. BOTTOM-LEFT: ZINC SPHERE */}
+              <motion.div
+                animate={{ y: [-6, 6, -6], rotate: [0, 2, 0] }}
+                transition={{ duration: 5.6, repeat: Infinity, ease: "easeInOut", delay: 1.3 }}
+                className="absolute bottom-12 left-2 sm:left-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-b from-white/95 via-purple-100/90 to-fuchsia-200/85 border-2 border-white shadow-[0_10px_25px_rgba(156,39,176,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(156,39,176,0.2)] flex flex-col items-center justify-center p-2 text-center select-none backdrop-blur-md cursor-pointer hover:scale-110 transition-transform duration-300 z-20 overflow-hidden"
+              >
+                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-3 rounded-full bg-white/80 blur-[1px] pointer-events-none" />
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-[#9C27B0] mb-0.5 shrink-0" />
+                <span className="text-[9px] sm:text-[10px] font-extrabold tracking-tight text-[#8E3B99] leading-tight font-display">
+                  ZINC
+                </span>
+              </motion.div>
+
+              {/* 4. BOTTOM-RIGHT: VITAMIN C SPHERE */}
+              <motion.div
+                animate={{ y: [7, -7, 7], rotate: [0, -2, 0] }}
+                transition={{ duration: 6.3, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                className="absolute bottom-6 right-2 sm:right-0 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-b from-white/95 via-orange-100/90 to-amber-200/85 border-2 border-white shadow-[0_10px_25px_rgba(234,88,12,0.25),inset_0_2px_6px_rgba(255,255,255,0.9),inset_0_-2px_6px_rgba(234,88,12,0.2)] flex flex-col items-center justify-center p-2 text-center select-none backdrop-blur-md cursor-pointer hover:scale-110 transition-transform duration-300 z-20 overflow-hidden"
+              >
+                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-3 rounded-full bg-white/80 blur-[1px] pointer-events-none" />
+                <Sun className="w-4 h-4 sm:w-5 sm:h-5 text-[#EA580C] mb-0.5 shrink-0" />
+                <span className="text-[9px] sm:text-[10px] font-extrabold tracking-tight text-[#DD6B20] leading-tight font-display">
+                  VITAMIN C
+                </span>
+              </motion.div>
+
+              {/* Tilted Floating Central Bottle positioned cleanly in center */}
               <motion.div
                 animate={{
                   y: [-10, 10, -10],
@@ -208,7 +187,7 @@ export function HeroSection() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="relative z-10 filter drop-shadow-[0_25px_40px_rgba(232,74,116,0.3)] flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300 pr-10 sm:pr-14"
+                className="relative z-10 filter drop-shadow-[0_25px_40px_rgba(232,74,116,0.3)] flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-300 my-4"
               >
                 <img
                   src={bottleImg}
@@ -217,39 +196,6 @@ export function HeroSection() {
                   loading="eager"
                 />
               </motion.div>
-
-              {/* 4 Circular 3D Glass Spheres stacked on the right (like client reference) */}
-              <div className="absolute inset-y-0 right-0 sm:right-2 flex flex-col justify-between py-2 pointer-events-none z-20">
-                {circularBubbles.map((bubble) => {
-                  const Icon = bubble.icon;
-                  return (
-                    <motion.div
-                      key={bubble.id}
-                      animate={{ y: bubble.floatY }}
-                      transition={{
-                        duration: bubble.duration,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                        delay: bubble.delay,
-                      }}
-                      className={`pointer-events-auto ${bubble.size} rounded-full bg-gradient-to-b ${bubble.gradient} ${bubble.borderGlow} border-2 flex flex-col items-center justify-center p-2 text-center select-none backdrop-blur-md cursor-pointer hover:scale-110 transition-transform duration-300 relative overflow-hidden`}
-                    >
-                      {/* Top curved light reflection for 3D sphere look */}
-                      <div className="absolute top-1 left-1/2 -translate-x-1/2 w-10 h-3 rounded-full bg-white/70 blur-[1px] pointer-events-none" />
-
-                      <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${bubble.iconColor} mb-0.5 shrink-0`} />
-                      <span className={`text-[9px] sm:text-[10px] font-extrabold tracking-tight ${bubble.textColor} leading-tight font-display`}>
-                        {bubble.title}
-                      </span>
-                      {bubble.sub && (
-                        <span className={`text-[7px] sm:text-[8px] font-bold ${bubble.textColor} leading-none mt-0.5`}>
-                          {bubble.sub}
-                        </span>
-                      )}
-                    </motion.div>
-                  );
-                })}
-              </div>
             </div>
           </div>
         </div>
