@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Heart, MapPin } from "lucide-react";
+import { ArrowRight, ShieldCheck, Heart, MapPin, Sparkles } from "lucide-react";
 import { scrollToSection } from "@/lib/lenis";
 import bottleImg from "@/assets/viva-bottle.png";
 import tcpLogo from "@/assets/tcp.svg";
@@ -115,34 +115,65 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Right Column: Hero Bottle & Non-Overlapping Highlights */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center relative">
+          {/* Right Column: Hero Tilted Bottle & Dynamic Floating Badges */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center relative py-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-              className="relative flex flex-col items-center justify-center w-full"
+              className="relative flex flex-col items-center justify-center w-full max-w-[420px]"
             >
               {/* Backing Ambient Glow */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-rose-400/30 via-pink-300/25 to-amber-200/25 blur-3xl -z-10" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-88 sm:h-88 rounded-full bg-gradient-to-tr from-rose-400/30 via-pink-300/25 to-amber-200/25 blur-3xl -z-10" />
 
-              {/* Central Bottle cleanly framed without any overlapping elements */}
+              {/* Floating Badge 1 - Top Right */}
               <motion.div
-                animate={{ y: [-6, 6, -6] }}
+                animate={{ y: [-8, 8, -8], rotate: [0, 2, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="relative z-10 filter drop-shadow-[0_20px_30px_rgba(232,74,116,0.25)] flex items-center justify-center py-2"
+                className="absolute -top-3 right-2 sm:-right-2 glass-panel px-3.5 py-2 rounded-2xl shadow-soft-rose flex items-center gap-2 text-xs font-bold text-rose-950 border border-white/90 z-20"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping" />
+                <span>Prebiotic + Collagen</span>
+              </motion.div>
+
+              {/* Floating Badge 2 - Mid Left */}
+              <motion.div
+                animate={{ y: [8, -8, 8], rotate: [0, -2, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="absolute top-1/3 -left-2 sm:-left-6 glass-panel px-3 py-1.5 rounded-2xl shadow-soft-rose flex items-center gap-1.5 text-[11px] font-bold text-rose-950 border border-white/90 z-20"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-rose-500" />
+                <span>สารสกัดมะม่วงหาวมะนาวโห่</span>
+              </motion.div>
+
+              {/* Tilted Floating Central Bottle */}
+              <motion.div
+                animate={{
+                  y: [-10, 10, -10],
+                  rotate: [-7, -5, -9, -7],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative z-10 filter drop-shadow-[0_25px_35px_rgba(232,74,116,0.3)] flex items-center justify-center my-4 cursor-pointer hover:scale-105 transition-transform duration-300"
               >
                 <img
                   src={bottleImg}
                   alt="ViVa+ Prebiotic Collagen Drink"
-                  className="w-[220px] sm:w-[270px] lg:w-[320px] max-h-[460px] h-auto object-contain select-none"
+                  className="w-[230px] sm:w-[280px] lg:w-[320px] max-h-[460px] h-auto object-contain select-none"
                   loading="eager"
                 />
               </motion.div>
 
-              {/* Highlight Cards positioned neatly BELOW the bottle on mobile and desktop so they never cover the bottle */}
-              <div className="w-full max-w-sm mt-3 grid grid-cols-2 gap-2.5 z-20">
-                <div className="glass-panel p-3 rounded-2xl shadow-soft-rose border border-white/90 text-left">
+              {/* Floating Highlight Cards - Bottom Left & Bottom Right */}
+              <div className="w-full grid grid-cols-2 gap-2.5 z-20 mt-1">
+                <motion.div
+                  animate={{ y: [-4, 4, -4] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                  className="glass-panel p-2.5 sm:p-3 rounded-2xl shadow-soft-rose border border-white/90 text-left"
+                >
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 shrink-0">
                       <Heart className="w-3.5 h-3.5" />
@@ -152,9 +183,13 @@ export function HeroSection() {
                       <p className="text-[9px] text-rose-800/70">หวานกำลังดี ดีต่อสุขภาพ</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="glass-panel p-3 rounded-2xl shadow-soft-rose border border-white/90 text-left">
+                <motion.div
+                  animate={{ y: [4, -4, 4] }}
+                  transition={{ duration: 5.2, repeat: Infinity, ease: "easeInOut", delay: 1.2 }}
+                  className="glass-panel p-2.5 sm:p-3 rounded-2xl shadow-soft-rose border border-white/90 text-left"
+                >
                   <div className="flex items-center gap-2">
                     <div className="w-7 h-7 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 shrink-0">
                       <ShieldCheck className="w-3.5 h-3.5" />
@@ -164,7 +199,7 @@ export function HeroSection() {
                       <p className="text-[9px] text-rose-800/70">ปลอดภัย ได้มาตรฐาน</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>

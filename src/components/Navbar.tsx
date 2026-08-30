@@ -59,12 +59,7 @@ export function Navbar() {
               className="h-8 sm:h-9 w-auto object-contain drop-shadow-xs"
             />
             <div className="h-5 w-px bg-rose-200/80 mx-0.5" />
-            <div className="flex flex-col">
-              <img src={tcpLogo} alt="TCP Group" className="h-4 w-auto object-contain opacity-85" />
-              <span className="text-[9px] sm:text-[10px] text-rose-900/60 font-medium tracking-wide hidden sm:block">
-                Prebiotic & Collagen
-              </span>
-            </div>
+            <img src={tcpLogo} alt="TCP Group" className="h-4 sm:h-4.5 w-auto object-contain opacity-85" />
           </Link>
 
           {/* Desktop Nav Items */}
