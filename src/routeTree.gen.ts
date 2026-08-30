@@ -10,53 +10,43 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as StoryRouteImport } from './routes/story'
-import { Route as SustainabilityRouteImport } from './routes/sustainability'
+import { Route as AboutTcpRouteImport } from './routes/about-tcp'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const StoryRoute = StoryRouteImport.update({
-  id: '/story',
-  path: '/story',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SustainabilityRoute = SustainabilityRouteImport.update({
-  id: '/sustainability',
-  path: '/sustainability',
+const AboutTcpRoute = AboutTcpRouteImport.update({
+  id: '/about-tcp',
+  path: '/about-tcp',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/story': typeof StoryRoute
-  '/sustainability': typeof SustainabilityRoute
+  '/about-tcp': typeof AboutTcpRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/story': typeof StoryRoute
-  '/sustainability': typeof SustainabilityRoute
+  '/about-tcp': typeof AboutTcpRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/story': typeof StoryRoute
-  '/sustainability': typeof SustainabilityRoute
+  '/about-tcp': typeof AboutTcpRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/story' | '/sustainability'
+  fullPaths: '/' | '/about-tcp'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/story' | '/sustainability'
-  id: '__root__' | '/' | '/story' | '/sustainability'
+  to: '/' | '/about-tcp'
+  id: '__root__' | '/' | '/about-tcp'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  StoryRoute: typeof StoryRoute
-  SustainabilityRoute: typeof SustainabilityRoute
+  AboutTcpRoute: typeof AboutTcpRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,18 +58,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/story': {
-      id: '/story'
-      path: '/story'
-      fullPath: '/story'
-      preLoaderRoute: typeof StoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sustainability': {
-      id: '/sustainability'
-      path: '/sustainability'
-      fullPath: '/sustainability'
-      preLoaderRoute: typeof SustainabilityRouteImport
+    '/about-tcp': {
+      id: '/about-tcp'
+      path: '/about-tcp'
+      fullPath: '/about-tcp'
+      preLoaderRoute: typeof AboutTcpRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -87,8 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  StoryRoute: StoryRoute,
-  SustainabilityRoute: SustainabilityRoute,
+  AboutTcpRoute: AboutTcpRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

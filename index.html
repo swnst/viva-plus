@@ -1,20 +1,54 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <title>VivaPlus</title>
-    <meta name="description" content="ViVa+ เครื่องดื่มเพื่อสุขภาพจากผลไม้ไทยแท้ เสาวรส มะม่วงหาวมะนาวโห่ ใบชาเขียวไทย" />
-    <meta property="og:title" content="VivaPlus" />
-    <meta property="og:description" content="เครื่องดื่มเพื่อสุขภาพจากผลไม้ไทยแท้ โดย TCP" />
+    <title>Viva Plus — เครื่องดื่มพรีไบโอติก คอลลาเจน วิตามินซี | TCP Group</title>
+    <meta name="description" content="Viva Plus (วีว่า พลัส) เครื่องดื่มเพื่อสุขภาพ ผสานพลัง Prebiotic, Collagen, Zinc, Vitamin C และสารสกัดมะม่วงหาวมะนาวโห่แท้จากเกษตรกรไทย โดยกลุ่มธุรกิจ TCP" />
+    <meta name="keywords" content="Viva Plus, วีว่า พลัส, พรีไบโอติก, คอลลาเจน, มะม่วงหาวมะนาวโห่, เครื่องดื่มเพื่อสุขภาพ, TCP, ตู้ TCP" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vivaplus.tcp.com/" />
+    <meta property="og:title" content="Viva Plus — เครื่องดื่มพรีไบโอติก คอลลาเจน วิตามินซี โดย TCP" />
+    <meta property="og:description" content="ดูแลตัวเองทุกวันด้วยพรีไบโอติก คอลลาเจน ซิงค์ และวิตามินซี พร้อมคุณค่าจากมะม่วงหาวมะนาวโห่ผลผลิตเกษตรกรไทย" />
+    <meta property="og:image" content="/viva-bottle.png" />
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Viva Plus — เครื่องดื่มพรีไบโอติก คอลลาเจน วิตามินซี โดย TCP" />
+    <meta name="twitter:description" content="ดูแลตัวเองทุกวันด้วยพรีไบโอติก คอลลาเจน ซิงค์ และวิตามินซี พร้อมคุณค่าจากมะม่วงหาวมะนาวโห่ผลผลิตเกษตรกรไทย" />
+    <meta name="twitter:image" content="/viva-bottle.png" />
+
     <link rel="icon" href="/my-icon.svg" type="image/svg+xml" />
+    
+    <!-- Google Fonts: Noto Sans Thai & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Work+Sans:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Viva Plus (วีว่า พลัส)",
+      "image": "/viva-bottle.png",
+      "description": "เครื่องดื่มฟังก์ชันนัล ผสาน Prebiotic, Collagen, Zinc, Vitamin C และสารสกัดมะม่วงหาวมะนาวโห่จากเกษตรกรไทย",
+      "brand": {
+        "@type": "Brand",
+        "name": "TCP Group"
+      },
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "กลุ่มธุรกิจ TCP (T.C. Pharmaceutical Industries Co., Ltd.)",
+        "url": "https://www.tcp.com"
+      },
+      "category": "Health & Functional Drink"
+    }
+    </script>
   </head>
-  <body class="antialiased min-h-svh flex flex-col">
+  <body class="antialiased min-h-svh flex flex-col selection:bg-rose-200 selection:text-rose-900 bg-[#FFF8F9] text-[#2D1B22] font-sans">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
