@@ -9,6 +9,12 @@ import {
   Building2,
   ExternalLink,
 } from "lucide-react";
+import {
+  FacebookIcon,
+  TikTokIcon,
+  ShopeeIcon,
+  LazadaIcon,
+} from "@/components/SocialIcons";
 import tcpLogo from "@/assets/tcp.svg";
 import "leaflet/dist/leaflet.css";
 
@@ -85,29 +91,37 @@ export function DistributionSection() {
       name: "Facebook",
       title: "TCP Group Thailand",
       url: "https://www.facebook.com/TCPGroupThailand",
-      badge: "Official Page",
-      color: "hover:border-blue-300 hover:bg-blue-50/50",
+      badge: "Official Facebook",
+      icon: FacebookIcon,
+      color: "hover:border-blue-300 hover:bg-blue-50/40",
+      iconBg: "bg-blue-100/70",
     },
     {
       name: "TikTok",
       title: "@tcpgroup",
       url: "https://www.tiktok.com/@tcpgroup",
       badge: "Official TikTok",
+      icon: TikTokIcon,
       color: "hover:border-stone-400 hover:bg-stone-50",
+      iconBg: "bg-stone-100",
     },
     {
-      name: "Shopee",
+      name: "Shopee Mall",
       title: "TCP Official Store",
       url: "https://shopee.co.th/tcp_official_store",
       badge: "Shopee Mall",
-      color: "hover:border-orange-300 hover:bg-orange-50/50",
+      icon: ShopeeIcon,
+      color: "hover:border-orange-300 hover:bg-orange-50/40",
+      iconBg: "bg-orange-100/70",
     },
     {
-      name: "Lazada",
+      name: "Lazada LazMall",
       title: "TCP Flagship Store",
       url: "https://www.lazada.co.th/shop/tcp-official-store",
-      badge: "LazMall",
-      color: "hover:border-indigo-300 hover:bg-indigo-50/50",
+      badge: "LazMall Flagship",
+      icon: LazadaIcon,
+      color: "hover:border-indigo-300 hover:bg-indigo-50/40",
+      iconBg: "bg-indigo-100/70",
     },
   ];
 
@@ -142,7 +156,7 @@ export function DistributionSection() {
 
         {/* 2 Main Channels: TCP Vending & Retail */}
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Main Hero Card: TCP Vending Machine - Toned down from hot pink to refined rose CTA gradient */}
+          {/* Main Hero Card: TCP Vending Machine */}
           <ScrollReveal direction="up" delay={0.1} className="lg:col-span-7">
             <div className="h-full bg-gradient-cta rounded-3xl p-8 sm:p-10 text-white shadow-soft-rose relative overflow-hidden flex flex-col justify-between">
               <div className="relative z-10 space-y-4">
@@ -237,7 +251,7 @@ export function DistributionSection() {
           </ScrollReveal>
         </div>
 
-        {/* Online Channels Section */}
+        {/* Online Channels Section with Authentic Brand Icons */}
         <ScrollReveal direction="up" delay={0.25} className="mt-12">
           <div className="bg-white rounded-3xl p-6 sm:p-8 border border-rose-200 shadow-soft-rose">
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-6 border-b border-rose-100">
@@ -250,33 +264,41 @@ export function DistributionSection() {
                 </h3>
               </div>
               <span className="text-xs text-rose-800/70">
-                ส่งตรงถึงหน้าบ้านอย่างปลอดภัย
+                สั่งซื้อง่าย ส่งตรงถึงหน้าบ้านอย่างปลอดภัย
               </span>
             </div>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {onlineChannels.map((ch, idx) => (
-                <a
-                  key={idx}
-                  href={ch.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`p-4 rounded-2xl border border-rose-100 bg-[#FFF9FA] ${ch.color} transition-all duration-300 flex flex-col justify-between group shadow-2xs hover:-translate-y-1`}
-                >
-                  <div className="space-y-1">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-rose-950 font-display">
-                        {ch.name}
-                      </span>
-                      <ExternalLink className="w-3.5 h-3.5 text-rose-400 group-hover:text-rose-600 transition-colors" />
+              {onlineChannels.map((ch, idx) => {
+                const IconComponent = ch.icon;
+                return (
+                  <a
+                    key={idx}
+                    href={ch.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`p-5 rounded-2xl border border-rose-100 bg-[#FFF9FA] ${ch.color} transition-all duration-300 flex flex-col justify-between group shadow-2xs hover:-translate-y-1`}
+                  >
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between">
+                        <div className={`w-10 h-10 rounded-xl ${ch.iconBg} flex items-center justify-center shadow-2xs`}>
+                          <IconComponent />
+                        </div>
+                        <ExternalLink className="w-4 h-4 text-rose-400 group-hover:text-rose-600 transition-colors" />
+                      </div>
+                      <div>
+                        <span className="text-xs font-bold text-rose-950 font-display">
+                          {ch.name}
+                        </span>
+                        <p className="text-sm font-bold text-rose-900 mt-0.5">{ch.title}</p>
+                      </div>
                     </div>
-                    <p className="text-sm font-semibold text-rose-900">{ch.title}</p>
-                  </div>
-                  <span className="inline-block mt-3 px-2 py-0.5 rounded-md text-[10px] font-medium bg-rose-100/70 text-rose-700 w-fit">
-                    {ch.badge}
-                  </span>
-                </a>
-              ))}
+                    <span className="inline-block mt-4 px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-rose-100/80 text-rose-700 w-fit border border-rose-200/60">
+                      {ch.badge}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
         </ScrollReveal>

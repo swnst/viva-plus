@@ -3,6 +3,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Sparkles, MapPin } from "lucide-react";
 import { scrollToSection } from "@/lib/lenis";
+import vivaLogo from "@/assets/viva_logo.png";
 import tcpLogo from "@/assets/tcp.svg";
 
 export function Navbar() {
@@ -42,7 +43,7 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? "glass-nav py-3 shadow-sm"
+            ? "glass-nav py-2.5 shadow-sm"
             : "bg-transparent py-4 sm:py-5"
         }`}
       >
@@ -50,27 +51,24 @@ export function Navbar() {
           {/* Logo Brand */}
           <Link
             to="/"
-            className="flex items-center gap-2.5 sm:gap-3 group transition-transform duration-300 hover:scale-[1.02]"
+            className="flex items-center gap-2 sm:gap-3 group transition-transform duration-300 hover:scale-[1.02]"
           >
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center shadow-md shadow-rose-300/40 text-white font-bold text-base sm:text-lg font-display tracking-tight border-2 border-white shrink-0">
-              V+
-            </div>
+            <img
+              src={vivaLogo}
+              alt="ViVa+"
+              className="h-8 sm:h-9 w-auto object-contain drop-shadow-xs"
+            />
+            <div className="h-5 w-px bg-rose-200/80 mx-0.5" />
             <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="text-xl sm:text-2xl font-bold font-display tracking-tight text-rose-950">
-                  ViVa<span className="text-rose-500">+</span>
-                </span>
-                <div className="h-4 w-px bg-rose-200 mx-0.5" />
-                <img src={tcpLogo} alt="TCP Group" className="h-4 w-auto object-contain opacity-85" />
-              </div>
-              <span className="text-[10px] sm:text-[11px] text-rose-900/60 font-medium tracking-wide">
-                Prebiotic & Collagen Drink
+              <img src={tcpLogo} alt="TCP Group" className="h-4 w-auto object-contain opacity-85" />
+              <span className="text-[9px] sm:text-[10px] text-rose-900/60 font-medium tracking-wide hidden sm:block">
+                Prebiotic & Collagen
               </span>
             </div>
           </Link>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-rose-100 shadow-sm">
+          <nav className="hidden lg:flex items-center gap-1 bg-white/75 backdrop-blur-md px-4 py-1.5 rounded-full border border-rose-100 shadow-sm">
             {navLinks.map((item) => (
               <button
                 key={item.id}

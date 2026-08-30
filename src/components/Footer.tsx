@@ -1,6 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { scrollToSection } from "@/lib/lenis";
 import { ExternalLink, Heart, ShieldCheck, Sparkles, MapPin } from "lucide-react";
+import {
+  FacebookIcon,
+  TikTokIcon,
+  ShopeeIcon,
+  LazadaIcon,
+} from "@/components/SocialIcons";
+import vivaLogo from "@/assets/viva_logo.png";
 import tcpLogo from "@/assets/tcp.svg";
 
 export function Footer() {
@@ -11,10 +18,10 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { name: "Facebook", url: "https://www.facebook.com/TCPGroupThailand" },
-    { name: "TikTok", url: "https://www.tiktok.com/@tcpgroup" },
-    { name: "Shopee Mall", url: "https://shopee.co.th/tcp_official_store" },
-    { name: "Lazada LazMall", url: "https://www.lazada.co.th/shop/tcp-official-store" },
+    { name: "Facebook", url: "https://www.facebook.com/TCPGroupThailand", icon: FacebookIcon },
+    { name: "TikTok", url: "https://www.tiktok.com/@tcpgroup", icon: TikTokIcon },
+    { name: "Shopee", url: "https://shopee.co.th/tcp_official_store", icon: ShopeeIcon },
+    { name: "Lazada", url: "https://www.lazada.co.th/shop/tcp-official-store", icon: LazadaIcon },
   ];
 
   return (
@@ -24,13 +31,13 @@ export function Footer() {
           {/* Brand & Story */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center text-white font-bold text-lg font-display">
-                V+
-              </div>
-              <span className="text-2xl font-bold font-display text-white">
-                ViVa<span className="text-rose-400">+</span>
-              </span>
-              <img src={tcpLogo} alt="TCP" className="h-4 w-auto object-contain brightness-0 invert opacity-80 ml-1" />
+              <img
+                src={vivaLogo}
+                alt="ViVa+"
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
+              <div className="h-6 w-px bg-rose-800/80 mx-0.5" />
+              <img src={tcpLogo} alt="TCP" className="h-5 w-auto object-contain brightness-0 invert opacity-80" />
             </div>
             <p className="text-sm text-rose-200/70 leading-relaxed">
               เครื่องดื่มเพื่อสุขภาพระดับพรีเมียม ผสานพรีไบโอติก คอลลาเจน วิตามินซี ซิงค์ และคุณค่าแท้จากมะม่วงหาวมะนาวโห่ผลผลิตเกษตรกรไทย โดยกลุ่มธุรกิจ TCP
@@ -154,19 +161,25 @@ export function Footer() {
             </div>
             
             <div className="pt-2">
-              <p className="text-xs font-semibold text-rose-300 mb-2">ช่องทางออนไลน์ TCP :</p>
-              <div className="flex flex-wrap gap-2">
-                {socialLinks.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-2.5 py-1 rounded-lg text-xs font-medium bg-rose-900/60 hover:bg-rose-800 text-rose-200 border border-rose-800/50 transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                ))}
+              <p className="text-xs font-semibold text-rose-300 mb-2.5">ช่องทางออนไลน์ TCP :</p>
+              <div className="grid grid-cols-2 gap-2">
+                {socialLinks.map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={idx}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-2.5 py-1.5 rounded-xl text-xs font-medium bg-rose-950/80 hover:bg-rose-900/90 text-rose-200 border border-rose-900/70 transition-all flex items-center gap-2"
+                    >
+                      <div className="w-4 h-4 shrink-0">
+                        <Icon className="w-4 h-4" />
+                      </div>
+                      <span className="truncate">{item.name}</span>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           </div>
