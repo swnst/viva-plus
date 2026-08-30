@@ -152,7 +152,7 @@ export function HeroSection() {
               <motion.div
                 animate={{ y: [8, -8, 8], rotate: [0, -2, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
-                className="absolute top-[46%] -left-4 sm:-left-12 lg:-left-8 bg-gradient-to-br from-white/95 via-pink-50/90 to-rose-100/80 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full shadow-[0_8px_25px_rgba(232,74,116,0.18)] flex items-center gap-2 text-xs sm:text-xs font-bold text-rose-950 border border-white/95 z-20 hover:scale-105 transition-transform duration-300 cursor-pointer whitespace-nowrap"
+                className="absolute top-[54%] -left-4 sm:-left-12 lg:-left-10 bg-gradient-to-br from-white/95 via-pink-50/90 to-rose-100/80 backdrop-blur-md px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-full shadow-[0_8px_25px_rgba(232,74,116,0.18)] flex items-center gap-2 text-xs sm:text-xs font-bold text-rose-950 border border-white/95 z-20 hover:scale-105 transition-transform duration-300 cursor-pointer whitespace-nowrap"
               >
                 <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-rose-500 to-pink-400 flex items-center justify-center text-white shadow-2xs shrink-0">
                   <Sparkles className="w-3 h-3" />
